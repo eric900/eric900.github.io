@@ -1,8 +1,8 @@
 <html>
-<head>
-	<script>
+  <head>
+	 <script>
 	if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw2_2.js', {scope: '../'}).then(function(registration) {
+  navigator.serviceWorker.register('./sw2_3.js', {scope: './'}).then(function(registration) {
     // Registration was successful
     console.log('ServiceWorker registration successful with scope: ',    registration.scope);
   }).catch(function(err) {
@@ -10,11 +10,12 @@
     console.log('ServiceWorker registration failed: ', err);
   });
 }
-	</script>
-</head>
-<body>
-<img src="image2.jpg"/><br/>
-<img src="../image1.jpg"/><br/>
-<img src="../../image.jpg">
-</body>
+	 </script>
+  </head>
+  <body>
+    <img src="/sub3/image3.jpg"/><br/>
+    <img src="image2.jpg"/><br/>
+    <img src="../image1.jpg"/><br/>
+    <img src="../../image.jpg">
+  </body>
 </html>
