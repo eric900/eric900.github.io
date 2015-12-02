@@ -1,9 +1,9 @@
 self.addEventListener('install', function(event) {
-  console.log('install haha!');
+  console.log('install haha2!');
 });
 
 self.addEventListener('activate', function(event) {
-    console.log('activate haha!');
+    console.log('activate haha2!');
 });
 
 self.addEventListener('fetch', function(event) {
