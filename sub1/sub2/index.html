@@ -2,7 +2,7 @@
   <head>
 	 <script>
 	if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('../sw.js').then(function(registration) {
+  navigator.serviceWorker.register('./sw.js').then(function(registration) {
     // Registration was successful
     console.log('ServiceWorker registration successful with scope: ',    registration.scope);
   }).catch(function(err) {
@@ -14,9 +14,6 @@
   </head>
   <body>
     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/78/Hk_P-plate.svg/2000px-Hk_P-plate.svg.png"/><br/>
-    <img src="./sub3/image.jpg"/><br/>
     <img src="image.jpg"/><br/>
-    <img src="../image.jpg"/><br/>
-    <img src="../../image.jpg">
   </body>
 </html>
