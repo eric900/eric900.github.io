@@ -17,7 +17,7 @@ var addToCache = function(req) {
 
     caches.open(config.db).then(function(cache) {
       console.log('addToCache 4' + req.url);
-      console.log(cache);
+      console.log(cache.put);
       cache.put(req.clone(), cacheResp);
     });
 
