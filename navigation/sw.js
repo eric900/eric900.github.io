@@ -29,27 +29,21 @@ self.addEventListener('activate', function(event) {
 });
 
 self.addEventListener('fetch', function(event) {
-  var promise, req, url = event.request.url;
+  var promise;
 
-  if (url.indexOf('bypass=1') !== -1 || url.indexOf('http:') === 0) {
+  if (event.request.url.indexOf('bypass=1') !== -1) {
     event.respondWith(fetch(event.request.clone()));
     return;
   }
 
-  if (url.indexOf('cors=1') !== -1) {
-    req = new Request(url, {mode : 'cors'});
-  } else {
-    req = event.request.clone();
-  }
-
-  promise = caches.open(config.db).then(function(cache) {
-    return cache.match(req);
-  }).then(function(response) {
+  promise = caches.open(config.db).then(function (cache) {
+    return cache.match(event.request.clone());
+  }).then(function (response) {
     if (response) {
-      addToCache(req );
+      addToCache(event.request);
       return response;
     } else {
-      return addToCache(req );
+      return addToCache(event.request);
     }
   });
 
