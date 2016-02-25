@@ -31,6 +31,8 @@ self.addEventListener('activate', function(event) {
 self.addEventListener('fetch', function(event) {
   var promise, req, url = event.request.url;
 
+  console.log(url);
+
   if (url.indexOf('bypass=1') !== -1 || url.indexOf('http:') === 0) {
     event.respondWith(fetch(event.request.clone()));
     return;
