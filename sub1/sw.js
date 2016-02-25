@@ -6,22 +6,13 @@ var addToCache = function(req) {
   return fetch(req.clone()).then(function(resp) {
     var cacheResp = resp.clone();
 
-    console.log('addToCache 1' + req.url);
-
     if (resp.status !== 200 || (resp.type !== 'basic' && resp.type !== 'cors')) {
-      console.log('addToCache 2' + req.url);
         return resp;
     }
 
-    console.log('addToCache 3' + req.url);
-
     caches.open(config.db).then(function(cache) {
-      console.log('addToCache 4' + req.url);
-      console.log(cache.put);
       cache.put(req.clone(), cacheResp);
     });
-
-    console.log('addToCache 5' + req.url);
 
     return resp;
   });
