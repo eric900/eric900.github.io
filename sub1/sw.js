@@ -6,6 +6,8 @@ var addToCache = function(req) {
   return fetch(req.clone()).then(function(resp) {
     var cacheResp = resp.clone();
 
+    console.log(resp);
+    
     if (resp.status !== 200 || (resp.type !== 'basic' && resp.type !== 'cors')) {
         return resp;
     }
