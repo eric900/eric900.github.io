@@ -1,22 +1,23 @@
 <html>
 <head>
 		 <script>
-	if ('serviceWorker' in navigator) {
-  navigator.serviceWorker.register('./sw1.js').then(function(registration) {
-    // Registration was successful
-    console.log('ServiceWorker registration successful with scope: ',    registration.scope);
-  }).catch(function(err) {
-    // registration failed :(
-    console.log('ServiceWorker registration failed: ', err);
-  });
-}
+// 	if ('serviceWorker' in navigator) {
+//   navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+//     // Registration was successful
+//     console.log('ServiceWorker registration successful with scope: ',    registration.scope);
+//   }).catch(function(err) {
+//     // registration failed :(
+//     console.log('ServiceWorker registration failed: ', err);
+//   });
+// }
 	 </script>
    <link rel="stylesheet" type="text/css" href="sw.css" media="all"/>
 </head>
 <body>
 	<h1>Hello World!sub1!</h1>
-	<!--img src="https://www.nesta.org.uk/sites/default/files/plan_i_for_europe_report_cover.png"/><br/>
-  <img src="http://www.bestmankind.com/wp-content/uploads/2015/10/countries_that_start_with_i.jpg"/><br/-->
+	<img src="https://www.nesta.org.uk/sites/default/files/plan_i_for_europe_report_cover.png"/><br/>
+  <img src="http://www.bestmankind.com/wp-content/uploads/2015/10/countries_that_start_with_i.jpg"/><br/>
   <img src="image.jpg"/><br/>
+  <iframe height=400 width=400 src="sub2/index.html"></iframe>
 </body>
 </html>
