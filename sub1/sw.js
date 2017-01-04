@@ -58,3 +58,5 @@ self.addEventListener('fetch', function(event) {
 
   event.respondWith(promise);
 });
+
+console.log(self.location);
