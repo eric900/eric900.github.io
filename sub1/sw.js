@@ -419,7 +419,6 @@ Route.prototype.getMethod = function() {
     r = this.routes.get(n);
   r || (this.routes.set(n, []), r = this.routes.get(n)), r.push(e)
 }, Routes.prototype.match = function(e) {
-  console.log('1:'+e);
   return this.matchMethod(e.method, e.url) || this.matchMethod("any", e.url)
 }, Routes.prototype.matchMethod = function(e, t) {
   function n(e, t) {
@@ -441,9 +440,7 @@ Route.prototype.getMethod = function() {
     o = r.pathname;
   r.host != self.location.host && (o = t);
   var i = this.routes.get(e),
-  console.log('2:'+i+' '+o);
     s = n(i, o);
-    console.log('3:'+s);
   return s ? s : null
 };
 var routes = new Routes,
