@@ -15,7 +15,9 @@
 			if ('serviceWorker' in navigator) {
 				navigator.serviceWorker.getRegistration().then(function(registration) {
 					console.log(registration);
-					registration.update();
+					if (registration) {
+						registration.update();
+					}
 				}).catch(function(err) {
 					console.log(err);
 				});
