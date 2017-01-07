@@ -11,7 +11,7 @@
 			}
 		}
 
-		function update(){
+		function update1(){
 			if ('serviceWorker' in navigator) {
 				navigator.serviceWorker.getRegistration().then(function(registration) {
 					console.log(registration);
@@ -24,7 +24,7 @@
 			}
 		}
 
-		function unregister(){
+		function unregister1(){
 			if ('serviceWorker' in navigator) {
 				navigator.serviceWorker.getRegistration().then(function(registration) {
 					console.log(registration);
@@ -34,6 +34,40 @@
 						}).catch(function(err){
 							console.log(err);
 						});
+					}
+				}).catch(function(err) {
+					console.log(err);
+				});
+			}
+		}
+
+		function update2(){
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.getRegistrations().then(function(registrations) {
+					console.log(registrations);
+					if (registrations) {
+						for (var i = registrations.length - 1; i >= 0; i--) {
+							registrations[i].update();
+						}
+					}
+				}).catch(function(err) {
+					console.log(err);
+				});
+			}
+		}
+
+		function unregister2(){
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.getRegistrations().then(function(registrations) {
+					console.log(registrations);
+					if (registrations) {
+						for (var i = registrations.length - 1; i >= 0; i--) {
+							registrations[i].unregister().then(function(b){
+								console.log(b);
+							}).catch(function(err){
+								console.log(err);
+							});
+						}
 					}
 				}).catch(function(err) {
 					console.log(err);
@@ -69,9 +103,9 @@
 		<img src="swImage1.jpg"/><br/>
   		<img src="swImage2.jpg"/><br/>
   		<button onclick='register()'>register</button><br/>
-  		<button onclick='update()'>update</button><br/>
-  		<button onclick='unregister()'>unregister</button><br/>
-  		<button onclick='getRegistration()'>getRegistration</button><br/>
-  		<button onclick='getRegistrations()'>getRegistrations</button><br/>
+  		<button onclick='update1()'>update1</button><br/>
+  		<button onclick='unregister1()'>unregister1</button><br/>
+  		<button onclick='update2()'>update2</button><br/>
+  		<button onclick='unregister2()'>unregister2</button><br/>
 	</body>
 </html>
