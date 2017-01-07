@@ -4,49 +4,55 @@
 		function register(){
 			if ('serviceWorker' in navigator) {
 				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
-					
+					console.log(registration);
 				}).catch(function(err) {
-
+					console.log(err);
 				});
 			}
 		}
 
 		function update(){
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
-
+				navigator.serviceWorker.getRegistration().then(function(registration) {
+					console.log(registration);
+					registration.update();
 				}).catch(function(err) {
-
+					console.log(err);
 				});
 			}
 		}
 
 		function unregister(){
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
-
+				navigator.serviceWorker.getRegistration().then(function(registration) {
+					console.log(registration);
+					registration.update().then(function(b){
+						console.log(b);
+					}).catch(function(err){
+						console.log(err);
+					});
 				}).catch(function(err) {
-
+					console.log(err);
 				});
 			}
 		}
 
 		function getRegistration(){
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
-
+				navigator.serviceWorker.getRegistration().then(function(registration) {
+					console.log(registration);
 				}).catch(function(err) {
-
+					console.log(err;
 				});
 			}
 		}
 
 		function getRegistrations(){
 			if ('serviceWorker' in navigator) {
-				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
-
+				navigator.serviceWorker.getRegistrations().then(function(registrations) {
+					console.log(registrations);
 				}).catch(function(err) {
-
+					console.log(err);
 				});
 			}
 		}
