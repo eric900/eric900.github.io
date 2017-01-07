@@ -26,11 +26,13 @@
 			if ('serviceWorker' in navigator) {
 				navigator.serviceWorker.getRegistration().then(function(registration) {
 					console.log(registration);
-					registration.unregister().then(function(b){
-						console.log(b);
-					}).catch(function(err){
-						console.log(err);
-					});
+					if (registration) {
+						registration.unregister().then(function(b){
+							console.log(b);
+						}).catch(function(err){
+							console.log(err);
+						});
+					}
 				}).catch(function(err) {
 					console.log(err);
 				});
