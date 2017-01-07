@@ -1,12 +1,54 @@
 <html>
 	<head>
 		<script>
-     	 if ('serviceWorker' in navigator) {
-  			navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+		function register(){
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+					
+				}).catch(function(err) {
 
-  			}).catch(function(err) {
+				});
+			}
+		}
 
-  			});
+		function update(){
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+
+				}).catch(function(err) {
+
+				});
+			}
+		}
+
+		function unregister(){
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+
+				}).catch(function(err) {
+
+				});
+			}
+		}
+
+		function getRegistration(){
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+
+				}).catch(function(err) {
+
+				});
+			}
+		}
+
+		function getRegistrations(){
+			if ('serviceWorker' in navigator) {
+				navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+
+				}).catch(function(err) {
+
+				});
+			}
 		}
 
 	 	</script>
@@ -15,7 +57,11 @@
 	<body>
 		<h1>Hello World!swIndex1!</h1>
 		<img src="swImage1.jpg"/><br/>
-  		<!--img src="http://www.bestmankind.com/wp-content/uploads/2015/10/countries_that_start_with_i.jpg"/><br/-->
   		<img src="swImage2.jpg"/><br/>
+  		<button onclick='register()'>register</button><br/>
+  		<button onclick='update()'>update</button><br/>
+  		<button onclick='unregister()'>unregister</button><br/>
+  		<button onclick='getRegistration()'>getRegistration</button><br/>
+  		<button onclick='getRegistrations()'>getRegistrations</button><br/>
 	</body>
 </html>
