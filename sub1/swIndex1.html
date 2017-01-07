@@ -1,0 +1,21 @@
+<html>
+	<head>
+		<script>
+     	 if ('serviceWorker' in navigator) {
+  			navigator.serviceWorker.register('./sw1.js').then(function(registration) {
+
+  			}).catch(function(err) {
+
+  			});
+		}
+
+	 	</script>
+   		<link rel="stylesheet" type="text/css" href="sw1.css" media="all"/>
+	</head>
+	<body>
+		<h1>Hello World!swIndex1!</h1>
+		<img src="swImage1.jpg"/><br/>
+  		<!--img src="http://www.bestmankind.com/wp-content/uploads/2015/10/countries_that_start_with_i.jpg"/><br/-->
+  		<img src="swImage2.jpg"/><br/>
+	</body>
+</html>
