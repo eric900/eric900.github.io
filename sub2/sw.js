@@ -49,8 +49,7 @@ function installListener(event, options) {
 
     });
     caches.match(new Request('http://info.3g.qq.com?v=11')).then(function(response) {
-        var rtmp = new Request('http://info.3g.qq.com?v=tmp');
-        cache.put(rtmp, response);
+        
     });
     caches.open(options.cache.name).then(function(cache){
     	var r1 = new Request('http://info.3g.qq.com?v=1');
