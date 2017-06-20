@@ -1,7 +1,11 @@
-<html>
-<head>
-</head>
-<body>
-Hello World!
-</body>
-</html>
+<!DOCTYPE html>
+<style>
+div::after {
+    content: url(data:text/plain,aaa);
+}
+div {
+    width: 10px;
+    min-width: -webkit-min-content;
+}
+</style>
+<div></div>
